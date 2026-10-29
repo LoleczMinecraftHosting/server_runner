@@ -135,6 +135,9 @@ class LocalServer:
 
         return properties
 
+    async def get_property(self, property: str) -> str | None:
+        return (await self.get_properties()).get(property)
+
     async def set_property(self, property: str, new_value: str):
         properties_path = os.path.join(await self.path, "server.properties")
 
