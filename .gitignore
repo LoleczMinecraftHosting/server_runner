@@ -1,0 +1,13 @@
+.env
+__pycache__/
+venv/
+
+*.log
+*test*
+*temp*
+*tmp*
+WIP_*
+*.json
+*.pem
+
+!api/honeypots/*
