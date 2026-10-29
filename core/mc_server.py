@@ -243,7 +243,7 @@ class LocalServer:
             return "".join(file.readlines()[-lines:])
 
 
-    async def set_status(self, new_status: LocalServer.Status):
+    async def set_status(self, new_status: Status):
         new_db_status = self.STATUS_DB_TABLE[new_status]
         self._data["status"] = new_db_status
         self._data["status_updated_at"] = int(time.time())
