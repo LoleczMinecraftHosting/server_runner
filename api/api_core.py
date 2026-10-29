@@ -75,7 +75,7 @@ class APIHandler(BaseHTTPRequestHandler):
                 )
                 res = future.result()
             else:
-                res = handler.func(**args, **params)
+                res = handler.func(*args, **params)
         except Exception as e:
             log(ERROR, f"API ERROR {self.command} 500 <{client_ip}> {self.path}\n E; {e}")
             self.reply(APIReturn({"error": "Internal server error"}, 500))
